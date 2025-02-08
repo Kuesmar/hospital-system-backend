@@ -1,0 +1,26 @@
+{
+  "name": "hospital-system-backend",
+  "version": "1.0.0",
+  "description": "Hospital Appointments Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuesmar/hospital-system-backend.git"
+  },
+  "author": "Luciano Sandoval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kuesmar/hospital-system-backend/issues"
+  },
+  "homepage": "https://github.com/Kuesmar/hospital-system-backend#readme",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
