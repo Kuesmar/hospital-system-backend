@@ -1,7 +1,14 @@
-import { DataTypes } from "sequelize";
+import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../connection";
+import { UserAttributes } from "../types/UserAttributes";
 
-const Users = sequelize.define(
+// Definir los atributos opcionales en la creación (id, createdAt y updatedAt se generan automáticamente)
+interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt"> {}
+
+// Definir la instancia del modelo (para tipado en TypeScript)
+interface UserInstance extends Model<UserAttributes, UserCreationAttributes>, UserAttributes {}
+
+const Users = sequelize.define<UserInstance>(
   "users",
   {
     id: {
@@ -37,7 +44,9 @@ const Users = sequelize.define(
     },
   },
   {
+    tableName: "users",
     underscored: true,
+    timestamps: true
   }
 );
 
